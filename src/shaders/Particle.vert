@@ -22,14 +22,21 @@ void main ()
   vec4 position = a_position;
 
   position.xz -= 0.5;
-  position.xz *= 10.;
+  position.xz *= 2.;
+  position.y += 1.;
 
   float isTop = step(0.1, a_texcoord.y);
-  vec2 noisey = vec2(noiseIQ(position.xyz*12.), noiseIQ(position.xyz*3.));
+  vec3 seedOffset = vec3(u_time,0,0);
+  vec3 seed1 = position.xyz*12. + seedOffset;
+  vec3 seed2 = position.xyz*3. + seedOffset;
+  vec2 noisey = vec2(noiseIQ(seed1), noiseIQ(seed2));
   noisey = noisey * 2. - 1.;
   position.xz += isTop * noisey * 0.2;
 
-  float size = 1.;
+  float fadeOut = sin(a_position.x * PI) * sin(a_position.z * PI);
+  position.y += isTop * fadeOut;
+
+  float size = 1. * fadeOut;
   vec2 offset = a_texcoord.xy;
   offset.x *= 0.1;
   offset *= size;

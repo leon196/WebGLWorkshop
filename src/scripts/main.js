@@ -18,24 +18,22 @@ loadAssets([
 
 function start ()
 {
-	meshCube = twgl.createBufferInfoFromArrays(gl, createCube());
-	shaderCube = new Shader("Cube");
-	meshParticle = twgl.createBufferInfoFromArrays(gl, createGridParticles(100, 1));
-	shaderParticle = new Shader("Particle");
 	scene = new Scene();
 	audio = new AudioAnalyser();
 
+	meshCube = twgl.createBufferInfoFromArrays(gl, createCube());
+	shaderCube = new Shader("Cube");
+	meshParticle = twgl.createBufferInfoFromArrays(gl, createGridParticles(40));
+	shaderParticle = new Shader("Particle");
+
 	textures = twgl.createTextures(gl, {
-		ground1: { src: "images/ground.jpg" },
-		fft: {
+		ground1: { 
 	    mag: gl.NEAREST,
-	    min: gl.LINEAR,
-	    format: gl.LUMINANCE,
-	    src: audio.dataArray,
-	    width: 1,
-		}
+	    min: gl.NEAREST,
+			src: "images/TexturesCom_Gravel0159_1_seamless_S.jpg"
+		},
 	})
-	scene.uniforms.u_fftTexture = textures.fft;
+	scene.uniforms.u_texture = textures.ground1;
 
 	ready = true;
 }
