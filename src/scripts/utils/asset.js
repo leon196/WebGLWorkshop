@@ -2,17 +2,16 @@
 var assets = {};
 var assetsIsLoaded = false;
 
-loadFiles(
-	[
-	"shaders/Cube.frag",
-	"shaders/Cube.vert",
-	"shaders/utils.glsl",
-	], 
-	function (error, content) { 
-	assets = content;
-	assetsIsLoaded = true;
-	addHeaderToShaders();
-});
+function loadAssets (files)
+{
+	loadFiles(
+		files, 
+		function (error, content) { 
+		assets = content;
+		assetsIsLoaded = true;
+		addHeaderToShaders();
+	});
+}
 
 function addHeaderToShaders ()
 {

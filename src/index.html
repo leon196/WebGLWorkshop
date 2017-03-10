@@ -8,13 +8,26 @@
 </head>
 <body>
 	<canvas id="c"></canvas>
+	<div id="overlay">
+		<a target="_blank" href="https://webglfundamentals.org/">WebGL Fundamentals</a><br/>
+		<a target="_blank" href="https://twgljs.org/docs/">TWGL Docs</a><br/>
+		<a target="_blank" href="https://twgljs.org/#examples">TWGL Examples</a><br/>
+		<br/>
+		<span id="debug"></span>
+		</div>
+	</div>
+	<audio id="music">
+  <source src="audio/jetsetradio.mp3" type="audio/mp3">
+  </audio>
 </body>
 <script src="libs/twgl-full.min.js"></script>
+<script src="libs/audiostreamsource.min.js"></script>
 <script src="scripts/utils/utils.js"></script>
 <script src="scripts/utils/load.js"></script>
 <script src="scripts/utils/asset.js"></script>
 <script src="scripts/utils/text.js"></script>
 <script src="scripts/utils/mouse.js"></script>
+<script src="scripts/utils/audioanalyser.js"></script>
 <script src="scripts/geometry/simple.js"></script>
 <script src="scripts/geometry/particles.js"></script>
 <script src="scripts/rendering/scene.js"></script>

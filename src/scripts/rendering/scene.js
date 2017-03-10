@@ -12,16 +12,7 @@ var Scene = function ()
 	this.world = m4.rotationY(0);
 
 	this.uniforms = {
-		u_lightWorldPos: [1, 8, -10],
-		u_lightColor: [1, 0.8, 0.8, 1],
-		u_ambient: [0, 0, 0, 1],
-		u_specular: [1, 1, 1, 1],
-		u_shininess: 50,
-		u_specularFactor: 1,
 		u_time: 0,
-		u_groundTexture: textures.ground1,
-		u_frameBuffer: null,
-		u_textTexture: null,
 	};
 
 	this.clear = function ()
