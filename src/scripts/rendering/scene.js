@@ -2,8 +2,8 @@
 var Scene = function ()
 {
 	this.projection = m4.perspective(30 * Math.PI / 180, gl.canvas.clientWidth / gl.canvas.clientHeight, 0.1, 10000);
-	this.eye = [1, 20, -80];
-	this.target = [0, 20, 0];
+	this.eye = [0, 3, -10];
+	this.target = [0, 0, 0];
 	this.up = [0, 1, 0];
 
 	this.camera = m4.lookAt(this.eye, this.target, this.up);
@@ -34,7 +34,7 @@ var Scene = function ()
 
 	this.update = function (time)
 	{
-		this.eye = rotateY(this.eye, mouse.delta.x * 0.01);
+		this.eye = rotateY(this.eye, -mouse.delta.x * 0.01);
 
 		this.camera = m4.lookAt(this.eye, this.target, this.up);
 		this.view = m4.inverse(this.camera);
