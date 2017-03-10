@@ -7,5 +7,5 @@ If you want to get shit done use three.js. If you want to do stuff low-level wit
 ## setup local server
 Download and install Python 3+  
 Add python binaries to PATH environment if Windows OS  
-Open terminal and type:  
+Open terminal, go to the folder with index.html and type:  
 > python -m http.server
