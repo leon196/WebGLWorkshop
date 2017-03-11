@@ -16,6 +16,8 @@ loadAssets([
 	"shaders/Particle.vert",
 	"shaders/PostProcess.frag",
 	"shaders/PostProcess.vert",
+	"shaders/Raymarching.frag",
+	"shaders/Raymarching.vert",
 	"shaders/utils.glsl",
 ]);
 
@@ -29,7 +31,7 @@ function start ()
 	meshParticle = twgl.createBufferInfoFromArrays(gl, createGridParticles(100));
 	shaderParticle = new Shader("Particle");
 	meshScreen = twgl.createBufferInfoFromArrays(gl, createPlane());
-	shaderScreen = new Shader("PostProcess");
+	shaderScreen = new Shader("Raymarching");
 
 	frame = new FrameBuffer();
 	scene.uniforms.u_frameBuffer = frame.getTexture();

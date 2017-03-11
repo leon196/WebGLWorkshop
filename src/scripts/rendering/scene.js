@@ -17,6 +17,7 @@ var Scene = function ()
 		u_scanlineSpeed: 0.1,
 		u_pixel: 32,
 		u_grassColor: [ 0.14, 0.51, 0.33, 1.0 ],
+		u_resolution: [ gl.canvas.width, gl.canvas.height ],
 	};
 
 	this.clear = function ()

@@ -6,6 +6,12 @@ precision mediump float;
 #define HALFPI 1.5707963267948966192313216916398
 #define HALF3PI 4.7123889803846898576939650749194
 
+/// Signed Sphere
+float sdSphere( vec3 p, float s )
+{
+  	return length(p)-s;
+}
+
 float luminance ( vec3 color )
 {
 	return (color.r + color.g + color.b) / 3.0;
