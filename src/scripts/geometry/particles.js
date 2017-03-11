@@ -29,7 +29,7 @@ function createGridParticles (dimension)
 		position: { numComponents: 3, data: [] }, 
 		color: { numComponents: 4, data: [] }, 
 		indices: { numComponents: 3, data: [] }, 
-		texcoord: { numComponents: 2, data: [] }, 
+		offset: { numComponents: 2, data: [] }, 
 	};
 
 	dimension = dimension || 8;
@@ -56,7 +56,7 @@ function createGridParticles (dimension)
 		// Array.prototype.push.apply(bufferArray.texcoord.data, [ 0.5,0, 1,0.5, 0,0.5, 0,0.5, 1,0.5, 0.5,1 ]);
 
 		var mid = 0.5;// + Math.random() * 0.4;
-		Array.prototype.push.apply(bufferArray.texcoord.data, [ -1,0, 0,1., 1.,0. ]);
+		Array.prototype.push.apply(bufferArray.offset.data, [ -1,0, 0,1., 1.,0. ]);
 		// Array.prototype.push.apply(bufferArray.indices.data, [ index,index+1, index,index+2, index+1,index+2, index+1,index+3, index+2,index+3]);//, i+4,i+3 ]);
 		Array.prototype.push.apply(bufferArray.indices.data, [ index,index+2,index+1 ]);
 		index += 3;

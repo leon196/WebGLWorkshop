@@ -4,6 +4,7 @@ var UIParameters = function ()
   this.grassColor = [ 36,130,83,1 ];
   this.scanlineSpeed = 0.1;
   this.transitionSpeed = 1.0;
+  this.pixel = 32;
 };
 
 
@@ -26,5 +27,6 @@ window.onload = function ()
   gui.addColor(uiParamaters, 'grassColor').onChange(function(value){updateUniform(this.property, value)});
   gui.add(uiParamaters, 'transitionSpeed').onChange(function(value){updateUniform(this.property, value)});
   gui.add(uiParamaters, 'scanlineSpeed').onChange(function(value){updateUniform(this.property, value)});
+  gui.add(uiParamaters, 'pixel').onChange(function(value){updateUniform(this.property, value)});
   
 };

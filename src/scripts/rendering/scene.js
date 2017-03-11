@@ -15,6 +15,7 @@ var Scene = function ()
 		u_time: 0,
 		u_transitionSpeed: 1.0,
 		u_scanlineSpeed: 0.1,
+		u_pixel: 32,
 		u_grassColor: [ 0.14, 0.51, 0.33, 1.0 ],
 	};
 
@@ -33,7 +34,7 @@ var Scene = function ()
 		this.camera = m4.lookAt(this.eye, this.target, this.up);
 		this.view = m4.inverse(this.camera);
 		this.viewProjection = m4.multiply(this.projection, this.view);
-		this.world = m4.rotationY(0);
+		this.world = m4.rotationX(0);
 
 		this.uniforms.u_viewInverse = this.camera;
 		this.uniforms.u_world = this.world;
@@ -46,6 +47,7 @@ var Scene = function ()
 	{
 		drawType = drawType || gl.TRIANGLES;
 		var programInfo = shader.programInfo;
+
 		gl.useProgram(programInfo.program);
 		twgl.setBuffersAndAttributes(gl, programInfo, geometry);
 		twgl.setUniforms(programInfo, this.uniforms);
