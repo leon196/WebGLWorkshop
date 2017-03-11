@@ -14,8 +14,8 @@ var Scene = function ()
 	this.uniforms = {
 		u_time: 0,
 		u_transitionSpeed: 1.0,
-		u_scanlineSpeed: 1.0,
-		u_grassColor: [ 0, 1, 0.5, 1.0 ],
+		u_scanlineSpeed: 0.1,
+		u_grassColor: [ 0.14, 0.51, 0.33, 1.0 ],
 	};
 
 	this.clear = function ()

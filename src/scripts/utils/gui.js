@@ -2,7 +2,7 @@
 var UIParameters = function ()
 {
   this.grassColor = [ 36,130,83,1 ];
-  this.scanlineSpeed = 0.3;
+  this.scanlineSpeed = 0.1;
   this.transitionSpeed = 1.0;
 };
 
@@ -27,9 +27,4 @@ window.onload = function ()
   gui.add(uiParamaters, 'transitionSpeed').onChange(function(value){updateUniform(this.property, value)});
   gui.add(uiParamaters, 'scanlineSpeed').onChange(function(value){updateUniform(this.property, value)});
   
-  for (var key in uiParamaters) {
-    if (assets.hasOwnProperty(key)) {
-      updateUniform(key, uiParamaters[key]);
-    }
-  }
 };
