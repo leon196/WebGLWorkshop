@@ -24,5 +24,10 @@ void main ()
   v_surfaceToLight = u_lightWorldPos - (u_world * a_position).xyz;
   v_surfaceToView = (u_viewInverse[3] - (u_world * a_position)).xyz;
 
-  gl_Position = u_worldViewProjection * a_position;
+  vec4 position = a_position;
+  position.xyz *= 0.4;
+  position.xyz = rotateY(rotateX(position.xyz, u_time), u_time * 0.666);
+  position.y += 1.0;
+
+  gl_Position = u_worldViewProjection * position;
 }

@@ -2,8 +2,8 @@
 var Scene = function ()
 {
 	this.projection = m4.perspective(30 * Math.PI / 180, gl.canvas.clientWidth / gl.canvas.clientHeight, 0.1, 10000);
-	this.eye = [0, 3, -10];
-	this.target = [0, 0, 0];
+	this.eye = [0, 6, -10];
+	this.target = [0, 1, 0];
 	this.up = [0, 1, 0];
 
 	this.camera = m4.lookAt(this.eye, this.target, this.up);
@@ -13,6 +13,9 @@ var Scene = function ()
 
 	this.uniforms = {
 		u_time: 0,
+		u_transitionSpeed: 1.0,
+		u_scanlineSpeed: 1.0,
+		u_grassColor: [ 0, 1, 0.5, 1.0 ],
 	};
 
 	this.clear = function ()

@@ -3,6 +3,7 @@ precision mediump float;
 
 uniform sampler2D u_texture;
 uniform float u_time;
+uniform float u_transitionSpeed;
 
 varying vec2 v_texCoord;
 varying vec3 v_normal;
@@ -13,7 +14,7 @@ void main ()
 {
 	vec2 uv = v_texCoord * 0.1;
 	vec4 mask = texture2D(u_texture, uv);
-	float oscillation = sin(u_time) * 0.5 + 0.5;
+	float oscillation = sin(u_time * u_transitionSpeed) * 0.5 + 0.5;
 	float treshold = step(oscillation, luminance(mask.rgb));
 
 
